@@ -1,9 +1,9 @@
 <h1 align="center">Hi, I'm Omar</h1>
-<h3 align="center">DevOps / DevSecOps Engineer &nbsp;·&nbsp; Offensive Security (Active Directory)</h3>
+<h3 align="center">DevOps / DevSecOps Engineer &nbsp;·&nbsp; Offensive Security (Web &amp; Active Directory)</h3>
 
 <p align="center">
-  I build secure, reproducible platforms — and, as a separate craft, I break into Active Directory
-  to understand how they fail. <b>Two distinct fields</b>, kept deliberately apart, each pursued in depth.
+  I build secure, reproducible platforms — and, as a separate craft, I break into web applications and
+  Active Directory to understand how they fail. <b>Two distinct fields</b>, kept deliberately apart, each pursued in depth.
 </p>
 
 ---
@@ -20,13 +20,14 @@ I build platforms where every deploy is a git commit and the cluster heals itsel
 
 ---
 
-## Offensive Security · Active Directory Pentesting
+## Offensive Security · Web Applications & Active Directory
 
-I learn this by building the target, then breaking it — standing up full Active Directory environments from scratch so I understand *why* an attack works, not just which tool to run.
+I learn this by building the target, then breaking it — standing up full Active Directory environments from scratch, and currently doing web application pentesting hands-on during an internship — so I understand *why* an attack works, not just which tool to run.
 
 - **Built an end-to-end AD CS ESC1 lab** — one `vagrant up` provisions a Domain Controller, Enterprise CA, Windows 10 and Kali on libvirt/KVM, then walks the chain: enumerate the vulnerable template → request a cert as a privileged user → PKINIT → DCSync.
 - **Building the domain forces the fundamentals** — Kerberos, certificate templates, ACLs and delegation — that running a tool against someone else's box never teaches.
 - **Both sides of each path** — enumeration, privilege escalation and lateral movement, plus the hardening that shuts each one down.
+- **Built MT-Scan, an internal recon and vulnerability-scanning platform**, during a web application pentesting internship — 15 tools (masscan, nmap, nuclei, ffuf, gobuster, subfinder, testssl.sh, and more) behind one plugin interface, with active scans gated by a code-enforced target allowlist instead of operator discipline.
 
 ---
 
@@ -43,6 +44,8 @@ I learn this by building the target, then breaking it — standing up full Activ
 **Offensive Security**
 
 **[`ad-attack-scenario`](https://github.com/omar1111eamsa/ad-attack-scenario)** — a build-it-then-break-it **Active Directory** lab: one `vagrant up` provisions a Domain Controller, Enterprise CA, Windows 10 and Kali (libvirt/KVM), then walks an **AD CS ESC1** attack end-to-end (enumerate → cert-as-admin → PKINIT → DCSync). Learn how a pentest really works by building the target and breaking it.
+
+**[`mt-scan`](https://github.com/omar1111eamsa/mt-scan)** — an on-demand recon and vulnerability-scanning platform (**Go** API/worker, Postgres-backed task queue, **Next.js** UI), built during a web application pentesting internship. 15 tools behind one plugin interface, findings persisted and diffable across re-scans instead of scattered across local files, active scans gated by a code-enforced allowlist — not operator discipline.
 
 ---
 
@@ -62,7 +65,7 @@ I learn this by building the target, then breaking it — standing up full Activ
 ![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white)
 ![BloodHound](https://img.shields.io/badge/BloodHound-C00000?style=for-the-badge&logoColor=white)
 
-<sub>Also working with: Docker · Helm · GitHub Actions · Semgrep · AWS · Cloudflare · NGINX · Java/Spring Boot · Next.js/TypeScript · Python · PostgreSQL · MongoDB · Neo4j · Redis · RabbitMQ</sub>
+<sub>Also working with: Docker · Helm · GitHub Actions · Semgrep · AWS · Cloudflare · NGINX · Go · Java/Spring Boot · Next.js/TypeScript · Python · PostgreSQL · MongoDB · Neo4j · Redis · RabbitMQ</sub>
 
 ---
 
