@@ -10,7 +10,7 @@
 
 ## DevOps / DevSecOps & Platform Engineering
 
-I build platforms where every deploy is a git commit and the cluster heals itself back to what's declared. A few decisions from running a 15+ service system on **k3s**:
+I build platforms where every deploy is a git commit and the cluster heals itself back to what's declared. A few decisions from running a 15+ service system on **k8s**:
 
 - **CI bumps the image tag in a separate manifests repo; ArgoCD reconciles from there.** Splitting the app repos from the GitOps source-of-truth keeps deploys auditable and revertable, and stops a bad build from touching the cluster directly.
 - **Database-per-service, never a shared DB.** Services talk synchronously over REST and asynchronously via RabbitMQ events, so one service's schema can't quietly couple to another's.
