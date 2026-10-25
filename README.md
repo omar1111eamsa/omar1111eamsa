@@ -1,5 +1,5 @@
 <h1 align="center">Hi, I'm Omar</h1>
-<h3 align="center">DevOps / DevSecOps Engineer &nbsp;·&nbsp; Offensive Security (Web &amp; Active Directory)</h3>
+<h3 align="center">DevSecOps &amp; Platform Engineer &nbsp;·&nbsp; Offensive Security (Web &amp; Active Directory)</h3>
 
 <p align="center">
   I build secure, reproducible platforms — and, as a separate craft, I break into web applications and
@@ -22,12 +22,12 @@ I build platforms where every deploy is a git commit and the cluster heals itsel
 
 ## Offensive Security · Web Applications & Active Directory
 
-I learn this by building the target, then breaking it — standing up full Active Directory environments from scratch, and currently doing web application pentesting hands-on during an internship — so I understand *why* an attack works, not just which tool to run.
+I learn this by building the target, then breaking it — standing up full Active Directory environments from scratch, and doing web application pentesting hands-on during my internship at Maroc Telecom — so I understand *why* an attack works, not just which tool to run.
 
 - **Built an end-to-end AD CS ESC1 lab** — one `vagrant up` provisions a Domain Controller, Enterprise CA, Windows 10 and Kali on libvirt/KVM, then walks the chain: enumerate the vulnerable template → request a cert as a privileged user → PKINIT → DCSync.
 - **Building the domain forces the fundamentals** — Kerberos, certificate templates, ACLs and delegation — that running a tool against someone else's box never teaches.
 - **Both sides of each path** — enumeration, privilege escalation and lateral movement, plus the hardening that shuts each one down.
-- **Built MT-Scan, an internal recon and vulnerability-scanning platform**, during a web application pentesting internship — 15 tools (masscan, nmap, nuclei, ffuf, gobuster, subfinder, testssl.sh, and more) behind one plugin interface, with active scans gated by a code-enforced target allowlist instead of operator discipline.
+- **Built MT-Scan, an internal recon and vulnerability-scanning platform**, during my pentesting internship at Maroc Telecom — 15 tools (masscan, nmap, nuclei, ffuf, gobuster, subfinder, testssl.sh, and more) behind one plugin interface, with active scans gated by a code-enforced target allowlist instead of operator discipline.
 
 ---
 
@@ -35,17 +35,23 @@ I learn this by building the target, then breaking it — standing up full Activ
 
 **Platform / DevSecOps**
 
+**Lotus Capital · DevSecOps internship** — the infrastructure for two of the company's platforms, both rebuilt from Git.
+- **[`trading-platform-infra`](https://github.com/omar1111eamsa/trading-platform-infra)** — six-service trading platform on **k3s**: blocking security gates in CI, the image tag is the git SHA committed back to Git, **ArgoCD** with prune + selfHeal, rollback = `git revert`.
+- **[`portable-platform-infra`](https://github.com/omar1111eamsa/portable-platform-infra)** — ~25 services including an **Airflow** pipeline on a 3-node k3s cluster: one `terraform apply` creates the VMs, runs **Ansible** and hands over to ArgoCD, on any cloud or bare metal.
+
+**AWS EKS**
+- **[`online-boutique-platform`](https://github.com/omar1111eamsa/online-boutique-platform)** — 11 microservices on **EKS** with **Karpenter**, ArgoCD, GitHub OIDC (no static AWS keys), and a DR runbook of every real failure and its fix.
+- **[`cymbal-bank-infrastructure`](https://github.com/omar1111eamsa/cymbal-bank-infrastructure)** — zero-trust banking platform on EKS: **Cilium** (eBPF) default-deny policies, **Istio** Ambient Mesh, AWS WAF, HCP Terraform.
+
 **Airbnb-clone microservices platform** — a production-style system, fully GitOps-managed.
 - **[`my-airbnb/k8s-manifests`](https://github.com/my-airbnb/k8s-manifests)** — GitOps source-of-truth: 15+ Spring Boot services and a Next.js frontend on **k3s**, deployed by **ArgoCD** with **NGINX Gateway Fabric**, Sealed Secrets, and HPA autoscaling.
 - **[`my-airbnb/infra`](https://github.com/my-airbnb/infra)** — the IaC that stands it up: **Terraform** (AWS) + **Ansible** (k3s, ArgoCD, cert-manager, Sealed Secrets, Falco).
-
-**[`trading-platform-infra`](https://github.com/omar1111eamsa/trading-platform-infra)** — Terraform + Ansible + ArgoCD provisioning a multi-service trading platform on k3s, fully reproducible.
 
 **Offensive Security**
 
 **[`ad-attack-scenario`](https://github.com/omar1111eamsa/ad-attack-scenario)** — a build-it-then-break-it **Active Directory** lab: one `vagrant up` provisions a Domain Controller, Enterprise CA, Windows 10 and Kali (libvirt/KVM), then walks an **AD CS ESC1** attack end-to-end (enumerate → cert-as-admin → PKINIT → DCSync). Learn how a pentest really works by building the target and breaking it.
 
-**[`mt-scan`](https://github.com/omar1111eamsa/mt-scan)** — an on-demand recon and vulnerability-scanning platform (**Go** API/worker, Postgres-backed task queue, **Next.js** UI), built during a web application pentesting internship. 15 tools behind one plugin interface, findings persisted and diffable across re-scans instead of scattered across local files, active scans gated by a code-enforced allowlist — not operator discipline.
+**[`mt-scan`](https://github.com/omar1111eamsa/mt-scan)** — an on-demand recon and vulnerability-scanning platform (**Go** API/worker, Postgres-backed task queue, **Next.js** UI), built during my pentesting internship at **Maroc Telecom**. 15 tools behind one plugin interface, findings persisted and diffable across re-scans instead of scattered across local files, active scans gated by a code-enforced allowlist — not operator discipline.
 
 ---
 
